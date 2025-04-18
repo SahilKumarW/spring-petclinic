@@ -54,6 +54,10 @@ class OwnerController {
 		this.owners = owners;
 	}
 
+	public String getPetName(Pet pet) {
+    return Optional.ofNullable(pet).orElse(new NullPet()).getName();
+	}
+
 	@InitBinder
 	public void setAllowedFields(WebDataBinder dataBinder) {
 		dataBinder.setDisallowedFields("id");
