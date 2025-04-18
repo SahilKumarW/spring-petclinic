@@ -32,6 +32,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.samples.petclinic.model.NullPet;
 
 import jakarta.validation.Valid;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -55,7 +56,7 @@ class OwnerController {
 	}
 
 	public String getPetName(Pet pet) {
-    return Optional.ofNullable(pet).orElse(new NullPet()).getName();
+		return Optional.ofNullable(pet).orElse(new NullPet()).getName();
 	}
 
 	@InitBinder
